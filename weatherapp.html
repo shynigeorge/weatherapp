@@ -187,7 +187,7 @@ body {
       let city = document.getElementById('city').value;
 
       // Make the API call using fetch
-      fetch(`http://api.weatherapi.com/v1/current.json?key=a40ae8bff3db4a96bfa63657241502&q=${city}&aqi=no`)
+      fetch(`http://api.weatherapi.com/v1/current.json?key=a40ae8bff3db4a96bfa63657241502&q=${encodeURIComponent(city)}&aqi=no`)
         .then((response) => response.json())
         .then((data) => {
           populateData(data);
